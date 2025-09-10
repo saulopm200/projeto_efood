@@ -1,81 +1,120 @@
-//import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Header from '../../../components/Header'
-import ListaRestaurantes from '../../../../src/ListaRestaurantes'
+import ListaRestaurantes from '../../../ListaRestaurantes'
 
-//import ModeloRestaurante from '../../models/Restaurante'
-//import prato1 from '../../assets/images/imagem.png'
-//import estrela from '../../assets/images/estrela.png'
+import prato1 from '../../../assets/images/imagem.png'
 
-// const comercios: ModeloRestaurante[] = [
-//   {
-//     id: 1,
-//     infos: ['Destaque da semana', 'Japonesa'],
-//     image: prato1,
-//     title: 'Hioki Sushi',
-//     number: '4.9',
-//     star: estrela,
-//     description:
-//       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-//     // eslint-disable-next-line react/jsx-key
-//     button: 'Saiba mais'
-//   },
-//   {
-//     id: 2,
-//     infos: ['Japonesa'],
-//     image: prato1,
-//     title: 'Hioki Sushi',
-//     number: '4.6',
-//     star: estrela,
-//     description:
-//       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-//     button: 'Saiba mais'
-//   },
-//   {
-//     id: 3,
-//     infos: ['Japonesa'],
-//     image: prato1,
-//     title: 'Hioki Sushi',
-//     number: '4.6',
-//     star: estrela,
-//     description:
-//       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-//     button: 'Saiba mais'
-//   },
-//   {
-//     id: 4,
-//     infos: ['Japonesa'],
-//     image: prato1,
-//     title: 'Hioki Sushi',
-//     number: '4.6',
-//     star: estrela,
-//     description:
-//       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-//     button: 'Saiba mais'
-//   },
-//   {
-//     id: 5,
-//     infos: ['Japonesa'],
-//     image: prato1,
-//     title: 'Hioki Sushi',
-//     number: '4.6',
-//     star: estrela,
-//     description:
-//       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-//     button: 'Saiba mais'
-//   },
-//   {
-//     id: 6,
-//     infos: ['Japonesa'],
-//     image: prato1,
-//     title: 'Hioki Sushi',
-//     number: '4.6',
-//     star: estrela,
-//     description:
-//       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
-//     button: 'Saiba mais'
-//   }
-// ]
+const restaurants: Restaurant[] = [
+  {
+    id: 1,
+    titulo: 'Hioki Sushi',
+    avaliacao: 4.9,
+    descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
+    capa: prato1,
+    button: 'Saiba mais',
+    destacado: true,
+    tipo: 'Japonesa',
+    cardapio: {
+      foto: prato1,
+      preco: 60.90,
+      id: 1,
+      nome: 'Sushi Especial',
+      descricao: 'Sushi com ingredientes frescos',
+      porcao: '2 pessoas'
+    }
+  },
+  {
+    id: 2,
+    titulo: 'La Dolce Vita Trattoria',
+    avaliacao: 4.6,
+    descricao: 'Autêntica culinária italiana com massas frescas e molhos tradicionais. Ambiente aconchegante e ingredientes importados diretamente da Itália.',
+    capa: prato1,
+    button: 'Saiba mais',
+    destacado: false,
+    tipo: 'Italiana',
+    cardapio: {
+      foto: prato1,
+      preco: 45.90,
+      id: 2,
+      nome: 'Spaghetti Carbonara',
+      descricao: 'Massa italiana com molho cremoso',
+      porcao: '1 pessoa'
+    }
+  },
+  {
+    id: 3,
+    titulo: 'A Mineira',
+    avaliacao: 4.8,
+    descricao: 'Comida caseira mineira com receitas tradicionais. Feijão tropeiro, tutu de feijão e outros pratos típicos preparados com carinho.',
+    capa: prato1,
+    button: 'Saiba mais',
+    destacado: false,
+    tipo: 'Brasileira',
+    cardapio: {
+      foto: prato1,
+      preco: 35.90,
+      id: 3,
+      nome: 'Feijão Tropeiro',
+      descricao: 'Prato típico mineiro',
+      porcao: '2 pessoas'
+    }
+  },
+  {
+    id: 4,
+    titulo: 'Thai Garden',
+    avaliacao: 4.7,
+    descricao: 'Culinária tailandesa autêntica com temperos exóticos e pratos picantes. Pad Thai, curry verde e outras especialidades do sudeste asiático.',
+    capa: prato1,
+    button: 'Saiba mais',
+    destacado: false,
+    tipo: 'Tailandesa',
+    cardapio: {
+      foto: prato1,
+      preco: 55.90,
+      id: 4,
+      nome: 'Pad Thai',
+      descricao: 'Macarrão tailandês tradicional',
+      porcao: '1 pessoa'
+    }
+  },
+  {
+    id: 5,
+    titulo: 'Burger House',
+    avaliacao: 4.5,
+    descricao: 'Hambúrgueres artesanais com carne premium e ingredientes frescos. Batatas fritas crocantes e molhos especiais da casa.',
+    capa: prato1,
+    button: 'Saiba mais',
+    destacado: false,
+    tipo: 'Americana',
+    cardapio: {
+      foto: prato1,
+      preco: 28.90,
+      id: 5,
+      nome: 'Cheeseburger Clássico',
+      descricao: 'Hambúrguer com queijo e bacon',
+      porcao: '1 pessoa'
+    }
+  },
+  {
+    id: 6,
+    titulo: 'Sushi Express',
+    avaliacao: 4.4,
+    descricao: 'Sushi rápido e saboroso para o dia a dia. Combos especiais e pratos individuais com preços acessíveis e qualidade garantida.',
+    capa: prato1,
+    button: 'Saiba mais',
+    destacado: false,
+    tipo: 'Japonesa',
+    cardapio: {
+      foto: prato1,
+      preco: 42.90,
+      id: 6,
+      nome: 'Combo Sushi',
+      descricao: 'Variedade de sushis e sashimis',
+      porcao: '1 pessoa'
+    }
+  }
+]
 
 export type Restaurant = {
   id: number
@@ -96,19 +135,41 @@ export type Restaurant = {
   }
 }
 
-const Home = () => {
-  
+const Loader = () => (
+  <div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '50vh',
+    fontSize: '18px',
+    color: '#E66767'
+  }}>
+    Carregando restaurantes...
+  </div>
+)
 
-  if (restaurants) {
-    return (
-      <>
-        <Header />
-        <ListaRestaurantes comercios={restaurants} />
-      </>
-    )
+const Home = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simula carregamento de dados
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <Loader />
   }
 
-  return <Loader />
+  return (
+    <>
+      <Header />
+      <ListaRestaurantes comercios={restaurants} />
+    </>
+  )
 }
 
 export default Home

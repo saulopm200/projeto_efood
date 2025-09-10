@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import bannerImg from '../../assets/images/Vector.png'
+import bannerImg from '../../assets/images/Vector (2).png'
 import { breakpoints, cores } from '../../styles'
 
 export const HeaderContainer = styled.div`

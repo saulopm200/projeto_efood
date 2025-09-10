@@ -1,33 +1,26 @@
-//import ModeloRestaurante from '../../models/Restaurante'
-import { Prato } from '../pages/Categories'
-//import { Restaurant } from '../../pages/Home'
-import PratosRestaurante from '../PratosRestaurantes'
+import styled from 'styled-components'
+import { breakpoints } from '../styles'
 
-import { Container, List } from './styles'
+export const Container = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 
-export type Props = {
-  pratos: Prato[]
-}
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 0 10px;
+  }
+`
 
-const ListaPratos = ({ pratos }: Props) => (
-  <Container className="container">
-    <div>
-      <List>
-        {pratos.map((prato) => (
-          <li key={prato.id}>
-            <PratosRestaurante
-              id={prato.id}
-              foto={prato.foto}
-              nome={prato.nome}
-              descricao={prato.descricao}
-              porcao={prato.porcao}
-              preco={prato.preco}
-            />
-          </li>
-        ))}
-      </List>
-    </div>
-  </Container>
-)
+export const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 56px;
 
-export default ListaPratos
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+`

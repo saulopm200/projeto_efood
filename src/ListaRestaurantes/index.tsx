@@ -1,5 +1,5 @@
 //import ModeloRestaurante from '../../models/Restaurante'
-import { Restaurant } from '../pages/Categories/Home'
+import type { Restaurant } from '../pages/Categories/Home'
 import Restaurante from '../components/Restaurante'
 
 import { Container, List } from '../styles'

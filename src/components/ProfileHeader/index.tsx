@@ -2,7 +2,7 @@ import { HeaderContainer, Container } from './styles'
 
 import { Link } from 'react-router-dom'
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo (3).png'
 
 const ProfileHeader = () => {
 

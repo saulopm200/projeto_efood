@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 
 import { Imagem, Text, Titulo, Container } from './styles'
 
-//import { useGetBannerQuery } from '../../services/api'
+//// import { useGetBannerQuery } from '../../services/api'
 
 type BannerParams = {
   id: string
@@ -10,17 +10,17 @@ type BannerParams = {
 
 const Banner = () => {
   const { id } = useParams() as BannerParams
-  const { data: restaurant } = useGetBannerQuery(id)
+  // const { data: restaurant } = useGetBannerQuery(id)
 
   return (
-    <Imagem style={{ backgroundImage: `url(${restaurant?.capa})` }}>
+    <Imagem style={{ backgroundImage: `url('')` }}>
       <div className="container">
         <Container>
           <div>
-            <Text>{restaurant?.tipo}</Text>
+            <Text>Restaurante</Text>
           </div>
           <div>
-            <Titulo>{restaurant?.titulo}</Titulo>
+            <Titulo>Nome do Restaurante</Titulo>
           </div>
         </Container>
       </div>

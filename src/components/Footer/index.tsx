@@ -1,6 +1,6 @@
 import { FooterContainer, RedesContainer, Descricao } from './styles'
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo (3).png'
 import instagram from '../../assets/images/instagram.png'
 import facebook from '../../assets/images/facebook.png'
 import twitter from '../../assets/images/twitter.png'
