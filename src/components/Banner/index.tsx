@@ -1,19 +1,9 @@
-import { useParams } from 'react-router-dom'
-
 import { Imagem, Text, Titulo, Container } from './styles'
 
-//// import { useGetBannerQuery } from '../../services/api'
-
-type BannerParams = {
-  id: string
-}
-
 const Banner = () => {
-  const { id } = useParams() as BannerParams
-  // const { data: restaurant } = useGetBannerQuery(id)
 
   return (
-    <Imagem style={{ backgroundImage: `url('')` }}>
+    <Imagem style={{ backgroundImage: `url('/src/assets/images/banner (1).png')` }}>
       <div className="container">
         <Container>
           <div>
