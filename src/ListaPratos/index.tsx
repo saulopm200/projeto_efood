@@ -1,7 +1,5 @@
-//import ModeloRestaurante from '../../models/Restaurante'
-import { Prato } from '../../src/pages/Categories'
-//import { Restaurant } from '../../pages/Home'
-import PratosRestaurante from '../'
+import type { Prato } from '../pages/Categories'
+import PratosRestaurante from '../components/PratosRestaurantes'
 
 import { Container, List } from './styles'
 

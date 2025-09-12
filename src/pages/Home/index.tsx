@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import Header from '../../../components/Header'
-import ListaRestaurantes from '../../../ListaRestaurantes'
+import Header from '../../components/Header'
+import ListaRestaurantes from '../../ListaRestaurantes'
 
-import prato1 from '../../../assets/images/imagem.png'
-import restaurante2 from '../../../assets/images/restaurante 2.png'
-import restaurante3 from '../../../assets/images/restaurante 3.png'
-import restaurante4 from '../../../assets/images/restaurante 4.png'
-import restaurante5 from '../../../assets/images/restaurante 5.png'
-import restaurante6 from '../../../assets/images/restaurante 6.png'
+import prato1 from '../../assets/images/imagem.png'
+import restaurante2 from '../../assets/images/restaurante 2.png'
+import restaurante3 from '../../assets/images/restaurante 3.png'
+import restaurante4 from '../../assets/images/restaurante 4.png'
+import restaurante5 from '../../assets/images/restaurante 5.png'
+import restaurante6 from '../../assets/images/restaurante 6.png'
 
 const restaurants: Restaurant[] = [
   {

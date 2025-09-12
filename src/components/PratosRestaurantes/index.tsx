@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
 import fechar from '../../assets/images/close.png'
-import { Prato } from '../../pages/Categories'
-import { add, open } from '../../store/reducers/cart'
+import type { Prato } from '../../pages/Categories'
+import { formataPreco } from '../../utils/formatters'
+// import { add, open } from '../../store/reducers/cart'
 
 import {
   Imagem,
@@ -26,12 +27,6 @@ type ModalState = {
 //   prato: Prato
 // }
 
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
-}
 
 const PratosRestaurante = ({
   foto,
@@ -67,10 +62,11 @@ const PratosRestaurante = ({
     id
   }
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const addToCart = () => {
-    dispatch(add(prato))
-    dispatch(open())
+    // dispatch(add(prato))
+    // dispatch(open())
+    console.log('Adicionando ao carrinho:', prato)
   }
 
   return (
