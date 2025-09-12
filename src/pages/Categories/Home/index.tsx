@@ -4,6 +4,11 @@ import Header from '../../../components/Header'
 import ListaRestaurantes from '../../../ListaRestaurantes'
 
 import prato1 from '../../../assets/images/imagem.png'
+import restaurante2 from '../../../assets/images/restaurante 2.png'
+import restaurante3 from '../../../assets/images/restaurante 3.png'
+import restaurante4 from '../../../assets/images/restaurante 4.png'
+import restaurante5 from '../../../assets/images/restaurante 5.png'
+import restaurante6 from '../../../assets/images/restaurante 6.png'
 
 const restaurants: Restaurant[] = [
   {
@@ -29,12 +34,12 @@ const restaurants: Restaurant[] = [
     titulo: 'La Dolce Vita Trattoria',
     avaliacao: 4.6,
     descricao: 'Autêntica culinária italiana com massas frescas e molhos tradicionais. Ambiente aconchegante e ingredientes importados diretamente da Itália.',
-    capa: prato1,
+    capa: restaurante2,
     button: 'Saiba mais',
     destacado: false,
     tipo: 'Italiana',
     cardapio: {
-      foto: prato1,
+      foto: restaurante2,
       preco: 45.90,
       id: 2,
       nome: 'Spaghetti Carbonara',
@@ -47,12 +52,12 @@ const restaurants: Restaurant[] = [
     titulo: 'A Mineira',
     avaliacao: 4.8,
     descricao: 'Comida caseira mineira com receitas tradicionais. Feijão tropeiro, tutu de feijão e outros pratos típicos preparados com carinho.',
-    capa: prato1,
+    capa: restaurante3,
     button: 'Saiba mais',
     destacado: false,
     tipo: 'Brasileira',
     cardapio: {
-      foto: prato1,
+      foto: restaurante3,
       preco: 35.90,
       id: 3,
       nome: 'Feijão Tropeiro',
@@ -65,12 +70,12 @@ const restaurants: Restaurant[] = [
     titulo: 'Thai Garden',
     avaliacao: 4.7,
     descricao: 'Culinária tailandesa autêntica com temperos exóticos e pratos picantes. Pad Thai, curry verde e outras especialidades do sudeste asiático.',
-    capa: prato1,
+    capa: restaurante4,
     button: 'Saiba mais',
     destacado: false,
     tipo: 'Tailandesa',
     cardapio: {
-      foto: prato1,
+      foto: restaurante4,
       preco: 55.90,
       id: 4,
       nome: 'Pad Thai',
@@ -83,12 +88,12 @@ const restaurants: Restaurant[] = [
     titulo: 'Burger House',
     avaliacao: 4.5,
     descricao: 'Hambúrgueres artesanais com carne premium e ingredientes frescos. Batatas fritas crocantes e molhos especiais da casa.',
-    capa: prato1,
+    capa: restaurante5,
     button: 'Saiba mais',
     destacado: false,
     tipo: 'Americana',
     cardapio: {
-      foto: prato1,
+      foto: restaurante5,
       preco: 28.90,
       id: 5,
       nome: 'Cheeseburger Clássico',
@@ -101,12 +106,12 @@ const restaurants: Restaurant[] = [
     titulo: 'Sushi Express',
     avaliacao: 4.4,
     descricao: 'Sushi rápido e saboroso para o dia a dia. Combos especiais e pratos individuais com preços acessíveis e qualidade garantida.',
-    capa: prato1,
+    capa: restaurante6,
     button: 'Saiba mais',
     destacado: false,
     tipo: 'Japonesa',
     cardapio: {
-      foto: prato1,
+      foto:restaurante6,
       preco: 42.90,
       id: 6,
       nome: 'Combo Sushi',
