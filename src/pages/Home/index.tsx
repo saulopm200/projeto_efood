@@ -1,126 +1,92 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import Header from '../../components/Header'
 import ListaRestaurantes from '../../ListaRestaurantes'
+import Loader from '../../Loader'
+//import { useGetRestaurantsQuery } from '../../services/api'
 
-
+import ModeloRestaurante from '../../models/Restaurante'
 import prato1 from '../../assets/images/imagem.png'
-import restaurante2 from '../../assets/images/restaurante 2.png'
-import restaurante3 from '../../assets/images/restaurante 3.png'
-import restaurante4 from '../../assets/images/restaurante 4.png'
-import restaurante5 from '../../assets/images/restaurante 5.png'
-import restaurante6 from '../../assets/images/restaurante 6.png'
+import restaurante2 from '../../assets/images/restaurante2.png'
+import restaurante3 from '../../assets/images/restaurante3.png'
+import restaurante4 from '../../assets/images/restaurante4.png'
+import restaurante5 from '../../assets/images/restaurante5.png'
+import restaurante6 from '../../assets/images/restaurante6.png'
+import estrela from '../../assets/images/estrela.png'
 
-const restaurants: Restaurant[] = [
-  {
-    id: 1,
-    titulo: 'Hioki Sushi',
-    avaliacao: 4.9,
-    descricao: 'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
-    capa: prato1,
-    button: 'Saiba mais',
-    destacado: true,
-    tipo: 'Japonesa',
-    cardapio: {
-      foto: prato1,
-      preco: 60.90,
-      id: 1,
-      nome: 'Sushi Especial',
-      descricao: 'Sushi com ingredientes frescos',
-      porcao: '2 pessoas'
-    }
+ const comercios: ModeloRestaurante[] = [
+   {
+     id: 1,
+     infos: ['Destaque da semana', 'Japonesa'],
+     image: prato1,
+     title: 'Hioki Sushi',
+     number: '4.9',
+     star: estrela,
+     description:
+       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
+    // eslint-disable-next-line react/jsx-key
+
+     button: 'Saiba mais'
   },
-  {
-    id: 2,
-    titulo: 'La Dolce Vita Trattoria',
-    avaliacao: 4.6,
-    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
-    capa: restaurante2,
-    button: 'Saiba mais',
-    destacado: false,
-    tipo: 'Italiana',
-    cardapio: {
-      foto: restaurante2,
-      preco: 45.90,
-      id: 2,
-      nome: 'Spaghetti Carbonara',
-      descricao: 'Massa italiana com molho cremoso',
-      porcao: '1 pessoa'
-    }
-  },
-  {
-    id: 3,
-    titulo: 'La Dolce Vita Trattoria',
-    avaliacao: 4.6,
-    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
-    capa: restaurante3,
-    button: 'Saiba mais',
-    destacado: false,
-    tipo: 'Italiana',
-    cardapio: {
-      foto: restaurante3,
-      preco: 35.90,
-      id: 3,
-      nome: 'Feijão Tropeiro',
-      descricao: 'Prato típico mineiro',
-      porcao: '2 pessoas'
-    }
-  },
-  {
-    id: 4,
-    titulo: 'La Dolce Vita Trattoria',
-    avaliacao: 4.6,
-    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
-    capa: restaurante4,
-    button: 'Saiba mais',
-    destacado: false,
-    tipo: 'Italiana',
-    cardapio: {
-      foto: restaurante4,
-      preco: 55.90,
-      id: 4,
-      nome: 'Pad Thai',
-      descricao: 'Macarrão tailandês tradicional',
-      porcao: '1 pessoa'
-    }
-  },
-  {
-    id: 5,
-    titulo: 'La Dolce Vita Trattoria',
-    avaliacao: 4.6,
-    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
-    capa: restaurante5,
-    button: 'Saiba mais',
-    destacado: false,
-    tipo: 'Italiana',
-    cardapio: {
-      foto: restaurante5,
-      preco: 28.90,
-      id: 5,
-      nome: 'Cheeseburger Clássico',
-      descricao: 'Hambúrguer com queijo e bacon',
-      porcao: '1 pessoa'
-    }
-  },
-  {
-    id: 6,
-    titulo: 'La Dolce Vita Trattoria',
-    avaliacao: 4.4,
-    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
-    capa: restaurante6,
-    button: 'Saiba mais',
-    destacado: false,
-    tipo: 'Italiana',
-    cardapio: {
-      foto:restaurante6,
-      preco: 42.90,
-      id: 6,
-      nome: 'Combo Sushi',
-      descricao: 'Variedade de sushis e sashimis',
-      porcao: '1 pessoa'
-    }
-  }
-]
+   {
+     id: 2,
+     infos: ['Italiana'],
+     image: restaurante2,
+     title: 'La Dolce Vita Italiana',
+     number: '4.6',
+     star: estrela,
+     description:
+       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+     button: 'Saiba mais'
+   },
+   {
+     id: 3,
+     infos: ['Italiana'],
+     image: restaurante3,
+     title: 'La Dolce Vita',
+     number: '4.6',
+     star: estrela,
+     description:
+       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+     button: 'Saiba mais'
+   },
+   {
+     id: 4,
+     infos: ['Italiana'],
+     image: restaurante4,
+     title: 'La Dolce Vita',
+     number: '4.6',
+     star: estrela,
+     description:
+       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+
+     button: 'Saiba mais'
+   },
+   {
+     id: 5,
+     infos: ['Italiana'],
+     image: restaurante5,
+     title: 'La Dolce Vita',
+     number: '4.6',
+     star: estrela,
+     description:
+       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+
+     button: 'Saiba mais'
+   },
+   {
+     id: 6,
+    infos: ['Italiana'],
+     image: restaurante6,
+     title: 'La Dolce Vita',
+     number: '4.6',
+     star: estrela,
+     description:
+       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+
+     button: 'Saiba mais'
+   }
+ ]
 
 export type Restaurant = {
   id: number
@@ -141,41 +107,20 @@ export type Restaurant = {
   }
 }
 
-const Loader = () => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '50vh',
-    fontSize: '18px',
-    color: '#E66767'
-  }}>
-    Carregando restaurantes...
-  </div>
-)
-
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const { data: restaurants } = useGetRestaurantsQuery()
 
-  useEffect(() => {
-    // Simula carregamento de dados
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (isLoading) {
-    return <Loader />
+  if (restaurants) {
+    return (
+      <>
+        <Header />
+        <ListaRestaurantes comercios={restaurants} />
+      </>
+    )
   }
 
-  return (
-    <>
-      <Header />
-      <ListaRestaurantes comercios={restaurants} />
-    </>
-  )
+  return <Loader />
 }
 
 export default Home
+

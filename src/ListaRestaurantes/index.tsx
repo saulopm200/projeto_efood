@@ -1,5 +1,4 @@
-//import ModeloRestaurante from '../../models/Restaurante'
-import type { Restaurant } from '../pages/Home'
+import type { Restaurant } from '../services/restaurantService'
 import Restaurante from '../components/Restaurante'
 
 import { Container, List } from '../styles'

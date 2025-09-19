@@ -6,7 +6,10 @@ import { breakpoints } from '../../styles'
 export const HeaderContainer = styled.div`
   display: flex;
   background-image: url(${bannerImg});
-  background-size: cotain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
 
   .container {
     height: 384px;
@@ -15,6 +18,9 @@ export const HeaderContainer = styled.div`
     text-align: center;
     justify-content: space-between;
     padding: 40px 0;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
   }
 `
 
