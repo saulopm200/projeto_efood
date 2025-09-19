@@ -1,4 +1,4 @@
-import { Imagem, Text, Titulo, Container } from './styles'
+ import { Imagem, Text, Titulo, Container } from './styles'
 
 const Banner = () => {
 

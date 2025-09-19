@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import ListaRestaurantes from '../../ListaRestaurantes'
 
+
 import prato1 from '../../assets/images/imagem.png'
 import restaurante2 from '../../assets/images/restaurante 2.png'
 import restaurante3 from '../../assets/images/restaurante 3.png'
@@ -15,7 +16,7 @@ const restaurants: Restaurant[] = [
     id: 1,
     titulo: 'Hioki Sushi',
     avaliacao: 4.9,
-    descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nihil suscipit nam libero, ipsum sit saepe inventore veritatis quis hic, assumenda molestias reprehenderit officiis natus earum cupiditate perspiciatis excepturi. Mollitia?',
+    descricao: 'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     capa: prato1,
     button: 'Saiba mais',
     destacado: true,
@@ -33,7 +34,7 @@ const restaurants: Restaurant[] = [
     id: 2,
     titulo: 'La Dolce Vita Trattoria',
     avaliacao: 4.6,
-    descricao: 'Autêntica culinária italiana com massas frescas e molhos tradicionais. Ambiente aconchegante e ingredientes importados diretamente da Itália.',
+    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
     capa: restaurante2,
     button: 'Saiba mais',
     destacado: false,
@@ -49,13 +50,13 @@ const restaurants: Restaurant[] = [
   },
   {
     id: 3,
-    titulo: 'A Mineira',
-    avaliacao: 4.8,
-    descricao: 'Comida caseira mineira com receitas tradicionais. Feijão tropeiro, tutu de feijão e outros pratos típicos preparados com carinho.',
+    titulo: 'La Dolce Vita Trattoria',
+    avaliacao: 4.6,
+    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
     capa: restaurante3,
     button: 'Saiba mais',
     destacado: false,
-    tipo: 'Brasileira',
+    tipo: 'Italiana',
     cardapio: {
       foto: restaurante3,
       preco: 35.90,
@@ -67,13 +68,13 @@ const restaurants: Restaurant[] = [
   },
   {
     id: 4,
-    titulo: 'Thai Garden',
-    avaliacao: 4.7,
-    descricao: 'Culinária tailandesa autêntica com temperos exóticos e pratos picantes. Pad Thai, curry verde e outras especialidades do sudeste asiático.',
+    titulo: 'La Dolce Vita Trattoria',
+    avaliacao: 4.6,
+    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
     capa: restaurante4,
     button: 'Saiba mais',
     destacado: false,
-    tipo: 'Tailandesa',
+    tipo: 'Italiana',
     cardapio: {
       foto: restaurante4,
       preco: 55.90,
@@ -85,13 +86,13 @@ const restaurants: Restaurant[] = [
   },
   {
     id: 5,
-    titulo: 'Burger House',
-    avaliacao: 4.5,
-    descricao: 'Hambúrgueres artesanais com carne premium e ingredientes frescos. Batatas fritas crocantes e molhos especiais da casa.',
+    titulo: 'La Dolce Vita Trattoria',
+    avaliacao: 4.6,
+    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
     capa: restaurante5,
     button: 'Saiba mais',
     destacado: false,
-    tipo: 'Americana',
+    tipo: 'Italiana',
     cardapio: {
       foto: restaurante5,
       preco: 28.90,
@@ -103,13 +104,13 @@ const restaurants: Restaurant[] = [
   },
   {
     id: 6,
-    titulo: 'Sushi Express',
+    titulo: 'La Dolce Vita Trattoria',
     avaliacao: 4.4,
-    descricao: 'Sushi rápido e saboroso para o dia a dia. Combos especiais e pratos individuais com preços acessíveis e qualidade garantida.',
+    descricao: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!.',
     capa: restaurante6,
     button: 'Saiba mais',
     destacado: false,
-    tipo: 'Japonesa',
+    tipo: 'Italiana',
     cardapio: {
       foto:restaurante6,
       preco: 42.90,
