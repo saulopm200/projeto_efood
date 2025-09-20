@@ -2,6 +2,7 @@ import { HeaderContainer, Titulo } from './styles'
 
 import logo from '../../assets/images/logo (3).png'
 
+
 const Header = () => (
   <HeaderContainer>
     <div className="container">

@@ -1,11 +1,10 @@
 import { useParams } from 'react-router-dom'
 
-//import { useGetRestaurantQuery } from '../../services/api'
-
 import ProfileHeader from '../../components/ProfileHeader'
 import Banner from '../../components/Banner'
 import ListaPratos from '../../ListaPratos'
 import Loader from '../../Loader'
+import { getRestaurantById } from '../../services/restaurantService'
 
 export type Prato = {
   id: number
@@ -33,7 +32,7 @@ type PratoParams = {
 
 const Categories = () => {
   const { id } = useParams() as PratoParams
-  const { data: restaurant } = useGetRestaurantQuery(id)
+  const restaurant = getRestaurantById(Number(id))
 
   if (restaurant) {
     return (

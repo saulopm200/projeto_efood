@@ -254,3 +254,5 @@ export const getRestaurantById = (id: number): Restaurant | undefined => {
 export const getRestaurantsByType = (tipo: string): Restaurant[] => {
   return restaurants.filter(restaurant => restaurant.tipo === tipo)
 }
+
+

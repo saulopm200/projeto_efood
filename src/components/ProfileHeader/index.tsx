@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom'
 
 import logo from '../../assets/images/logo (3).png'
 
+
 const ProfileHeader = () => {
+  // Mock data para demonstração - em produção seria gerenciado por um estado global
+  const items: unknown[] = []
 
   const openCart = () => {
-    dispatch(open())
+    // Mock function - em produção seria implementada com Redux/
+    console.log('Abrindo carrinho')
   }
 
   return (

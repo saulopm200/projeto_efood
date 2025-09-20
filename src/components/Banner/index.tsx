@@ -3,7 +3,7 @@
 const Banner = () => {
 
   return (
-    <Imagem style={{ backgroundImage: `url('/src/assets/images/banner (1).png')` }}>
+    <Imagem style={{ backgroundImage: `url('/src/assets/images/Hero.png')` }}>
       <div className="container">
         <Container>
           <div>
