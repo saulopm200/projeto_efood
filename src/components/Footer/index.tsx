@@ -1,31 +1,34 @@
-import { FooterContainer, RedesContainer, Descricao } from './styles'
-
-import logo from '../../assets/images/logo (3).png'
+import logo from '../../assets/images/logo.png'
 import instagram from '../../assets/images/instagram.png'
 import facebook from '../../assets/images/facebook.png'
 import twitter from '../../assets/images/twitter.png'
-import { Link } from 'react-router-dom'
+
+import { FooterContain, ListSocialMedia } from './styles'
 
 const Footer = () => (
-  <FooterContainer>
-    <div className="container">
-      <Link to="/">
+    <FooterContain className='divFlex'>
         <img src={logo} alt="Efood" />
-      </Link>
-      <RedesContainer>
-        <img src={instagram} alt="Instagram" />
-        <img src={facebook} alt="Facebook" />
-        <img src={twitter} alt="Twitter" />
-      </RedesContainer>
-      <div>
-        <Descricao>
-          A efood é uma plataforma para divulgação de estabelecimentos, a
-          responsabilidade pela entrega, qualidade dos produtos é toda do
-          estabelecimento contratado.
-        </Descricao>
-      </div>
-    </div>
-  </FooterContainer>
+            <ListSocialMedia className='divFlex'>
+                <li>
+                    <a href="#">
+                        <img src={instagram} alt="instagram" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src={facebook} alt="facebook" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src={twitter} alt="twitter" />
+                    </a>
+                </li>
+            </ListSocialMedia>
+        <div>
+            <p>A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado. </p>
+        </div>
+    </FooterContain>
 )
 
 export default Footer

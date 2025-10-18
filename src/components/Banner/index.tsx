@@ -1,21 +1,21 @@
- import { Imagem, Text, Titulo, Container } from './styles'
+import bannerImg from '../../assets/images/italian.png'
+import { Div, Image } from './styles'
 
-const Banner = () => {
-
-  return (
-    <Imagem style={{ backgroundImage: `url('/src/assets/images/Hero.png')` }}>
-      <div className="container">
-        <Container>
-          <div>
-            <Text>Restaurante</Text>
-          </div>
-          <div>
-            <Titulo>Nome do Restaurante</Titulo>
-          </div>
-        </Container>
-      </div>
-    </Imagem>
-  )
+type Props = {
+    title: string
+    type: string
 }
+
+const Banner = ( { title, type } : Props) => (
+
+    <Image className='divFlex' style={{backgroundImage: `url(${bannerImg})` }}>
+        <Div className="container">
+            <p>{type}</p>
+            <h2>{title}</h2>
+        </Div>
+    </Image>
+
+
+)
 
 export default Banner

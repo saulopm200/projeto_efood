@@ -1,19 +1,25 @@
-import { HeaderContainer, Titulo } from './styles'
+import { useLocation } from 'react-router-dom'
 
-import logo from '../../assets/images/logo (3).png'
+import vetorimg from '../../assets/images/vector.png'
 
+import { HeaderBar } from './styles'
 
-const Header = () => (
-  <HeaderContainer>
-    <div className="container">
-      <div>
-        <img src={logo} alt="Efood" />
-      </div>
-      <div>
-        <Titulo>Viva experiências gastronômicas no conforto da sua casa</Titulo>
-      </div>
-    </div>
-  </HeaderContainer>
-)
+export type Props = {
+    children: React.ReactNode
+}
+
+const Header = ( { children } : Props) => {
+
+    const location = useLocation()
+    const itsHome = location.pathname === '/'
+
+    return(
+
+        <HeaderBar className='divFlex' $itsHome={itsHome} style={{backgroundImage: `url(${vetorimg})` }}>
+            {children}
+        </HeaderBar>
+    )
+
+}
 
 export default Header

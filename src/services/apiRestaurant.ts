@@ -1,0 +1,62 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import type { RestaurantItem } from "../components/List/ListRestaurant";
+
+type Product = {
+    id: number
+    price: number
+}
+
+export type PurchasePayload = {
+    products: Product[]
+    delivery: {
+        receiver: string,
+        address: {
+            description: string
+            city: string
+            zipCode: string
+            number: string
+            complement: string
+        }
+    },
+    payment: {
+        card: {
+            name: string
+            number: string
+            code: number
+            expires: {
+                month: number
+                year:number
+            }
+        }
+    }
+}
+
+type PurchaseResponse = {
+    orderId: string
+}
+
+const api = createApi({
+    reducerPath:'apiRestaurant',
+    baseQuery: fetchBaseQuery({
+        baseUrl: 'https://ebac-fake-api.vercel.app/api/efood/'
+    }),
+    endpoints: (builder) => ({
+        getMenu: builder.query<RestaurantItem, string>({
+            query:(id) => `restaurantes/${id}`,
+        }),
+        getPlate: builder.query<RestaurantItem[], void>({
+            query: () => 'restaurantes'
+        }),
+        purchase: builder.mutation<PurchaseResponse, PurchasePayload>({
+            query:(body) => ({
+                url:'checkout',
+                method: 'POST',
+                body
+            })
+        })
+
+    })
+})
+
+export const { useGetMenuQuery, useGetPlateQuery, usePurchaseMutation } = api
+export default api

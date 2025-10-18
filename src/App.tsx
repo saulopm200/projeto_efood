@@ -1,22 +1,26 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from "react-router-dom"
+import { Provider } from "react-redux"
 
+import { store } from "./components/store/reducer"
+import Rotas from "./routes"
 
-//import Header from './components/Header'
-import { GlobalCss } from './styles'
+import Aside from "./components/Aside"
+import Footer from "./components/Footer"
 
-import Rotas from './routes'
-import Footer from './components/Footer'
+import EstiloGlobal from "./styles"
+
 
 function App() {
+
   return (
-
+    <Provider store={store}>
       <BrowserRouter>
-        <GlobalCss />
-        <Rotas />
+        <EstiloGlobal />
+        <Rotas/>
         <Footer />
-
+        <Aside />
       </BrowserRouter>
-
+    </Provider>
   )
 }
 

@@ -1,51 +1,37 @@
-import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import styled from "styled-components";
+import { colors } from "../../styles";
 
-export const Imagem = styled.div`
-  width: 100%;
-  height: 280px;
-  display: block;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-weight: bold;
-
-  .container {
+export const Image = styled.div`
     position: relative;
+    background-size: cover;
+    height: 280px;
+
+    &::before{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+        inset:0;
+    }
+
+    `
+    export const Div = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-`
+    padding-top: 24px;
+    padding-bottom: 32px;
+    font-weight: 100;
+    height: 100%;
 
-export const Text = styled.p`
-  color: ${cores.branco};
-  font-weight: 100;
-  font-size: 32px;
-  margin-top: 24px;
+    p, h2{
+        position: relative;
+        z-index: 1;
+        color: ${colors.white};
+        font-size: 32px;
+    }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 24px;
-    padding: 0 20px;
-  }
-`
-
-export const Titulo = styled.h2`
-  font-size: 32px;
-  color: ${cores.branco};
-  margin-bottom: 32px;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 24px;
-    padding: 0 20px;
-  }
-`
-
-export const Container = styled.div`
-  width: 1024px;
-  margin: auto;
-  height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    h2{
+        font-weight: 900;
+    }
 `

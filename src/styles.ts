@@ -1,58 +1,47 @@
 import { createGlobalStyle } from 'styled-components'
-import styled from 'styled-components'
 
-export const cores = {
-  bege: '#FFEBD9',
-  begeClaro: '#FFF8F2',
-  coral: '#E66767',
-  branco: '#ffffff'
+export const colors = {
+    white: '#ffffff',
+    light_orange: '#FFEBD9',
+    orange_rose:'#E66767',
 }
 
-export const breakpoints = {
-  desktop: '1024px',
-  tablet: '768px'
-}
-
-export const GlobalCss = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    list-style: none;
+export const breackpoints = {
+    desktop: '1024px',
+    tablet: '768px'
   }
 
-  body {
-    background-color: ${cores.begeClaro};
-    color: ${cores.coral};
-  }
+const EstiloGlobal = createGlobalStyle`
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
+    body{
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+        background-color: #FFF8F2;
+        min-width: 640px;
+
+        }
+
+        .container{
+            margin: auto;
+            max-width: 1024px;
+            width: 100%;
+            box-sizing: border-box;
+
+            @media (max-width:${breackpoints.desktop}){
+                padding: 0 16px;
+            }
+
+            @media (max-width: ${breackpoints.tablet}){
+                max-width: 570px;
+            }
+        }
+      
 `
 
-export const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    padding: 0 10px;
-  }
-`
-
-export const List = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-  margin-top: 56px;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 32px;
-  }
-`
+export default EstiloGlobal

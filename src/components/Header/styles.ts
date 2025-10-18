@@ -1,38 +1,26 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import { breackpoints, colors } from "../../styles";
 
-import bannerImg from '../../assets/images/Hero.png'
-import { breakpoints } from '../../styles'
-
-export const HeaderContainer = styled.div`
-  display: flex;
-  background-image: url(${bannerImg});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-
-  .container {
-    height: 384px;
-    display: flex;
-    flex-direction: column;
+export const HeaderBar = styled.header<{$itsHome: boolean}>`
+    display:flex;
+    height: ${({ $itsHome }) => ($itsHome ? '384px' : '186px')};
     text-align: center;
-    justify-content: space-between;
-    padding: 40px 0;
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-  }
-`
+    flex-direction: ${({ $itsHome }) => ($itsHome ? 'column' : 'row')};
+    justify-content: space-around;
+    align-items: center;
+    font-size:${({ $itsHome }) => ($itsHome ? '36px' : '18px;')};
+    font-weight: 900;
+    color: ${colors.orange_rose};
 
-export const Titulo = styled.h1`
-  max-width: 540px;
-  font-weight: bold;
-  width: 100%;
-  margin: auto;
-  font-size: 36px;
+    p{
+        width:${({ $itsHome }) => ($itsHome ? '544px' : 'auto')};
+    }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 24px;
-    padding: 0 20px;
-  }
+    @media (max-width: ${breackpoints.tablet}){
+        font-size: 16px;
+
+        button{
+            font-size: 16px;
+        }
+    }
 `
